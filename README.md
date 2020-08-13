@@ -1,6 +1,6 @@
 # Ticketing
 
-This is the code from a tutorial for microservices with nodejs
+A project for learning the microservices architechture made with TypeScript, Next.js, Node.js, MongoDB, Redis & NATS Streaming Server.
 
 ## Installing ingress-nginx
 
@@ -34,4 +34,24 @@ C:\Windows\System32\drivers\etc
 
 ```
 /etc/hosts
+```
+
+## Build and Run on GC
+
+#### On the root folder run in terminal
+
+```
+skaffold dev
+```
+
+## If you get this error
+
+```
+exiting dev mode because first build failed: couldn't build "gcr.io/ticketing-dev-286319/auth": getting cloudbuild client: google: could not find default credentials. See https://developers.google.com/accounts/docs/application-default-credentials for more information.
+```
+
+### Run in terminal
+
+```
+gcloud auth application-default login
 ```
