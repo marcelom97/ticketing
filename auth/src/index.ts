@@ -4,6 +4,7 @@ import { json } from 'body-parser';
 import { yellow, bold } from 'colors';
 import mongoose from 'mongoose';
 import cookieSession from 'cookie-session';
+import morgan from 'morgan';
 
 import { currentUserRouter } from './routes/current-user';
 import { signinRouter } from './routes/signin';
@@ -23,6 +24,7 @@ app.use(
     secure: true
   })
 );
+app.use(morgan('dev'));
 // Mount Routes on servers
 app.use(currentUserRouter);
 app.use(signinRouter);

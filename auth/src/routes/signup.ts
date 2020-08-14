@@ -6,6 +6,9 @@ import { validateRequest } from '../middlewares/validate-request';
 import { BadRequestError } from '../errors/bad-request-error';
 import { User } from '../models/user';
 
+import { currentUser } from '../middlewares/current-user';
+import { requireAuth } from '../middlewares/require-auth';
+
 const router = express.Router();
 
 router.post(
@@ -48,7 +51,7 @@ router.post(
   }
 );
 
-router.get('/api/users', async (req, res, next) => {
+router.get('/api/users', currentUser, requireAuth, async (req, res, next) => {
   const users = await User.find();
 
   if (!users) {
