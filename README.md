@@ -55,3 +55,13 @@ exiting dev mode because first build failed: couldn't build "gcr.io/ticketing-de
 ```
 gcloud auth application-default login
 ```
+
+## Setup kubernetes env variables
+
+#### run in terminal
+
+```
+kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdf
+```
+
+kubectl create secret generic {k8s var name} --from-literal={VAR_KEY}={VAR_VALUE}
