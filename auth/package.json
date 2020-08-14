@@ -15,5 +15,8 @@
     "express-validator": "^6.6.1",
     "ts-node-dev": "^1.0.0-pre.57",
     "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "colors": "^1.4.0"
   }
 }
