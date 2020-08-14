@@ -1,4 +1,5 @@
 import express from 'express';
+import 'express-async-errors';
 import { json } from 'body-parser';
 import { yellow, bold } from 'colors';
 
@@ -20,7 +21,7 @@ app.use(signoutRouter);
 app.use(signupRouter);
 
 // Throws Not Found Error for Routes that not exist
-app.all('*', () => {
+app.all('*', async (req, res, next) => {
   throw new NotFoundError();
 });
 
