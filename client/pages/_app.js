@@ -1,11 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import buildClient from '../api/buildClient';
+import Header from '../components/header';
 
 function AppComponent({ Component, pageProps, currentUser }) {
   return (
-    <div>
-      <h1>Hello {currentUser.email}</h1>
-      <Component {...pageProps} />;
+    <div className='container-fluid'>
+      <Header currentUser={currentUser} />
+      <Component {...pageProps} />
     </div>
   );
 }
