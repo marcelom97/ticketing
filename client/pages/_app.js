@@ -1,5 +1,5 @@
-import 'bootstap/dist/css/bootstap.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
-export default ({ Component, pageProps }) => {
+export default function app({ Component, pageProps }) {
   return <Component {...pageProps} />;
-};
+}
